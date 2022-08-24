@@ -4,5 +4,5 @@ Docker compose that runs 3 instances.
 
 Instruction:
 
-git clone 
+git clone https://github.com/vlabeit/whist_devops.git
 docker-compose build && docker-compose up
