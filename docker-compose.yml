@@ -1,0 +1,32 @@
+version: '2'
+services:
+
+  web:
+    build:
+      context: ./app/
+    command: gunicorn config.wsgi:application --bind 0.0.0.0:80
+    volumes:
+      - ./app/:/usr/src/app/
+      - static_files:/usr/src/app/staticfiles
+    expose:
+     - 80
+    # ports:
+    #   - 8000:8000
+
+    env_file:
+      - ./.env/dev.env
+    deploy:
+      replicas: 3
+
+  nginx:
+    build:
+      context: ./nginx/
+    ports:
+      - 9090:80
+    volumes:
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+      - static_files:/home/devops/staticfiles
+
+volumes:
+  static_files:
+
