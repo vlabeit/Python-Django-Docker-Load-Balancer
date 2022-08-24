@@ -13,8 +13,8 @@ services:
     # ports:
     #   - 8000:8000
 
-    env_file:
-      - ./.env/dev.env
+#     env_file:
+#       - ./.env/dev.env
     deploy:
       replicas: 3
 
