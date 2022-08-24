@@ -9,3 +9,5 @@ git clone https://github.com/vlabeit/whist_devops.git
 cd whist_devops/
 
 docker-compose build && docker-compose up
+
+go to http://localhost:9090/
